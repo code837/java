@@ -16,13 +16,13 @@ import java.util.regex.*;
  */
 public class PatternSeq1 {
  
-    public void splitterPlusSearch(String arg_sInputFileName, String arg_sOutputFileName) 
+    public void searchReplace(String arg_sInputFileName, String arg_sOutputFileName) 
     
         throws Exception {
-        BufferedReader vcfReader = new BufferedReader(new FileReader(arg_sInputFileName));
+        BufferedReader dataReader = new BufferedReader(new FileReader(arg_sInputFileName));
         String sCurrentLine;
         try (PrintWriter out = new PrintWriter(new FileWriter(arg_sOutputFileName))) {
-            while ((sCurrentLine = vcfReader.readLine()) != null) {
+            while ((sCurrentLine = dataReader.readLine()) != null) {
                 String [] aLines = sCurrentLine.split(" ");
                 String [] aInfo= new String[] {aLines[0], aLines[1], aLines[2], aLines[3]};
                 String patternONE = "(TTAGGG)";                
@@ -45,7 +45,7 @@ public class PatternSeq1 {
                 String args_sInputFileName = "C:\\Users\\margaret\\Desktop\\input.txt";
                 String arg_sOutputFileName =  "C:\\Users\\margaret\\Desktop\\TelomereResults.txt";
 		try { 
-			analyzer.splitterPlusSearch(args_sInputFileName, arg_sOutputFileName);
+			analyzer.searchReplace(args_sInputFileName, arg_sOutputFileName);
 		} catch (Exception exp){
 		}
         
