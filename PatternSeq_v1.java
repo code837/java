@@ -4,7 +4,7 @@
  * Purpose: To find telomeric repeat patterns in NGS reads. 
  * Date: 8/30/2016
  * Instructions: Create a text file that contains four columns: read identifier, 
- * chromosome, position, and sequence.
+ * chromosome, position, and sequence, all from unmapped reads only.
  */
 package patternseq1;
 import java.io.*;
